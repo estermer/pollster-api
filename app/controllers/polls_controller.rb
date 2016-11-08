@@ -14,6 +14,9 @@ class PollsController < ApplicationController
   end
 
   def destroy
+    poll = Poll.destroy(params[:id])
+
+    render json: {status: 204}
   end
 
   private
