@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'welcome#index'
+  resources :polls, only: [:index, :create, :destroy]
+  resource :polls, only: [:show] do
+    resource :answers, only: [:create]
+  end
 end
