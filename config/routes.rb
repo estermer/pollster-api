@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
   resources :polls, only: [:index, :create, :destroy]
   resource :polls, only: [:show] do
     resource :answers, only: [:create]
   end
-  resource :answers, only: [:update]
+  put '/answers/:id', to: 'answers#update'
 end
 
 

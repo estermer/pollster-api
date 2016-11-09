@@ -14,6 +14,7 @@ class AnswersController < ApplicationController
   end
 
   def update
+    
   end
 
   private
