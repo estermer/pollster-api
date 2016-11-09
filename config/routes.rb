@@ -14,5 +14,4 @@ end
 #         poll DELETE /polls/:id(.:format)     polls#destroy
 # polls_answers POST   /polls/answers(.:format) answers#create
 #              GET    /polls(.:format)         polls#show
-#      answers PATCH  /answers(.:format)       answers#update
-#              PUT    /answers(.:format)       answers#update
+#      answers PUT    /answers/:id(.:format)       answers#update

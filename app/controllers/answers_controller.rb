@@ -14,7 +14,16 @@ class AnswersController < ApplicationController
   end
 
   def update
-    
+    answer = Answer.find(params[:id])
+
+    answer.update(
+      responses: answer[:responses] + 1
+    )
+
+    if answer.save
+      render json: {status: 200}
+    else
+      render json: {status: 422, answer: answer}
   end
 
   private
