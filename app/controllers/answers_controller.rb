@@ -24,6 +24,7 @@ class AnswersController < ApplicationController
       render json: {status: 200}
     else
       render json: {status: 422, answer: answer}
+    end
   end
 
   private
