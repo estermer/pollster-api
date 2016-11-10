@@ -2,7 +2,7 @@ class AnswersController < ApplicationController
   before_action :set_poll, only: [:create]
 
   def create
-    params[:answers] do |text| #check to make sure that params[:answers] is right
+    params[:answers].each do |text| #check to make sure that params[:answers] is right
       answer = Answer.create(
         text: text,
         responses: 0,
