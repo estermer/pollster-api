@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :polls, only: [:index, :create, :destroy]
-  put 'polls/:poll_id/answers/:id', to: 'answers#create'
+  put 'polls/:poll_id/answers', to: 'answers#create'
   put '/answers/:id', to: 'answers#update'
 end
 
