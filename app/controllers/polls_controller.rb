@@ -14,6 +14,10 @@ class PollsController < ApplicationController
     end
   end
 
+  def show
+    render json: {response: 200, answers: Poll.find(params[:id]).answers}
+  end
+
   def destroy
     poll = Poll.destroy(params[:id])
 
