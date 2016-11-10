@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 20161108211237) do
   create_table "answers", force: :cascade do |t|
     t.string  "text"
     t.integer "responses"
+    t.integer "poll_id"
+    t.index ["poll_id"], name: "index_answers_on_poll_id", using: :btree
   end
 
   create_table "polls", force: :cascade do |t|
@@ -27,4 +29,5 @@ ActiveRecord::Schema.define(version: 20161108211237) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "answers", "polls"
 end

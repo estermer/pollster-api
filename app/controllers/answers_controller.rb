@@ -30,6 +30,6 @@ class AnswersController < ApplicationController
   private
 
   def set_poll
-    @poll = Poll.find(params[:id])
+    @poll = Poll.find(params[:poll_id])
   end
 end
