@@ -1,6 +1,7 @@
 class PollsController < ApplicationController
   def index
-    render json: {status: 200, polls: Poll.all}
+    polls = Poll.all
+    render json: {status: 200, polls: get_polls_and_answers(polls)}
   end
 
   def create
@@ -23,5 +24,23 @@ class PollsController < ApplicationController
 
   def poll_params
     params.required(:poll).permit(:title, :question)
+  end
+
+  # a method to return to the angular a object of
+  # the poll and the array of answers
+  def get_polls_and_answers(polls)
+    pollArray = []
+    if polls.length > 0
+      polls.each {|poll|
+        pollArray.push({
+          id: poll.id,
+          title: poll.title,
+          question: poll.question,
+          answers: poll.answers
+        })
+      }
+    end
+    puts pollArray
+    pollArray
   end
 end

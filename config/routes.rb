@@ -9,5 +9,5 @@ end
 #  polls GET    /polls(.:format)                      polls#index
 #        POST   /polls(.:format)                      polls#create
 #   poll DELETE /polls/:id(.:format)                  polls#destroy
-#        PUT    /polls/:poll_id/answers/:id(.:format) answers#create
+#        POST    /polls/:poll_id/answers/:id(.:format) answers#create
 #        PUT    /answers/:id(.:format)                answers#update
